@@ -16,11 +16,12 @@ def main():
 
 
     choice = 0
-    while choice != 4:
+    while choice != 5:
         print("1) Add friend")
         print("2) Look up a friends")
         print("3) Display friends")
-        print("4) Quit")
+        print("4) Remove friend")
+        print("5) Quit")
         choice = eval(input())
 
         if choice == 1:
@@ -43,6 +44,13 @@ def main():
                 print(friends[i])
 
         elif choice == 4:
+             print("Remove friend")
+             keyword1 = input("Enter search term: ")
+             for friend in friends:
+                 if keyword1 in friend:
+                    friends.remove(friend)
+
+        elif choice == 5:
             print("Quitting...")
         else:
             print("Invalid response")
